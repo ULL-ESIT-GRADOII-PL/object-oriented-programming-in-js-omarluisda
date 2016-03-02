@@ -25,18 +25,7 @@
   function Temperatura(valor,tipo)
   {
     /* tipo es opcional. Debería admitir new Medida("45.2 F") */
-    var regexp = /^\s([-+]?\d+(?:.\d)?)(?:([eE])[+-]?(\d)+)?\s(f|c|k)\s$/i
-    if(valor.match(regexp))
-    {
-      valor = valor.match(regexp);
-      this.valor = valor[1];
-      this.tipo = valor[2];
-    }
-    else
-    {
-      this.valor = valor;
-      this.tipo = tipo;
-    }
+    Medida.call(this,valor,tipo);
   }
 
   function Celsius(valor)
@@ -56,7 +45,7 @@
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
         regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i;
-    valor     = valor.match(regexp);
+        valor     = valor.match(regexp);
 
     if (valor) {
       var numero = valor[1],
