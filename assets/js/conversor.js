@@ -5,18 +5,8 @@
   {
     /* tipo es opcional. Debería admitir  new Medida("45.2 Km") */
     /* ademas de new Medida(45.2, "Km") */
-    var regexp = /[-+]?\d+(?:\.\d+)?)\s*([a-zA-Z]+)/;
-    if(valor.match(regexp))
-    {
-      valor = valor.match(regexp);
-      this.valor = valor[1];
-      this.tipo = valor[2];
-    }
-    else
-    {
       this.valor = valor;
       this.tipo = tipo;
-    }
   }
 
   Temperatura.prototype = new Medida ();
@@ -34,12 +24,14 @@
   function Celsius(valor)
   {
     Temperatura.call(this,valor);
-    toFarenheit: function () {
-      return ((this.valor*9)/5)+32);
-    }
-    toKelvin: function () {
-      return this.valor+273.15;
-    }
+  }
+
+  Celsius.prototype.toFarenheit:function () {
+    return ((this.valor*9)/5)+32);
+  }
+
+  Celsius.prototype.toKelvin:function () {
+    return this.valor+273.15;
   }
 
   Farenheint.prototype = new Temperatura ();
@@ -48,12 +40,14 @@
   function Farenheit(valor)
   {
     Temperatura.call(this,valor);
-    toCelsius: function () {
-      return (this.valor-32)/1.800);
-    }
-    toKelvin: function () {
-      return (((this.valor-32)/1.8)+273.15);
-    }
+  }
+
+  Farenheit.prototype.toCelsius:function () {
+    return (this.valor-32)/1.800);
+  }
+
+  Farenheit.prototype.toKelvin:function () {
+    return (((this.valor-32)/1.8)+273.15);
   }
 
   Kelvin.prototype = new Temperatura ();
@@ -63,12 +57,14 @@
   function Kelvin(valor)
   {
     Temperatura.call(this,valor);
-    toFarenheit: function () {
-      return this.valor-273.15;
-    }
-    toCelsius: function () {
-      return ((this.valor-273.15)*1.8)+32;
-    }
+  }
+
+  Kelvin.prototype.toFarenheit: function () {
+    return this.valor-273.15;
+  }
+
+  Kelvin.prototype.toCelsius: function () {
+    return ((this.valor-273.15)*1.8)+32;
   }
 
   exports.Temperatura = Temperatura;
@@ -106,5 +102,5 @@
     }
     else
       elemento.innerHTML = "";
-  };
+  }
 })(this);
