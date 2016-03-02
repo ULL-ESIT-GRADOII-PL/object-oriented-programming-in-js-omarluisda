@@ -28,12 +28,35 @@
     Medida.call(this,valor,tipo);
   }
 
+  Celsius.prototype = new Temperatura ();
+  Celsius.prototype.constructor = Celsius;
+
   function Celsius(valor)
   {
+    Temperatura.call(this,valor);
+    toFarenheit: function{
+      return ((this.valor*9)/5)+32);
+    }
+    toKelvin: fuction{
+      return this.valor+273.15;
+    }
   }
+
+  Farenheint.prototype = new Temperatura ();
+  Farenheint.prototype.constructor = Farenheint;
 
   function Farenheit(valor)
   {
+    Temperatura.call(this,valor);
+  }
+
+  Kelvin.prototype = new Temperatura ();
+  Kelvin.prototype.constructor = Kelvin;
+
+
+  function Kelvin(valor)
+  {
+    Temperatura.call(this,valor);
   }
 
   exports.Temperatura = Temperatura;
