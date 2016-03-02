@@ -6,7 +6,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 * [Web]()
 
-**Página de los autores **
+**Página de los autores**
 
 * [Web Omar]("http://alu0100819182.github.io")
 * [Web Luisda]("http://luisdavidpm.github.io")
