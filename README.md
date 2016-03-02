@@ -4,7 +4,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 **Página de la práctica**
 
-* [Web]()
+* Web de la practica <http://luisdavidpm.github.io/object-oriented-programming-in-js-omarluisda>
 
 **Página de los autores**
 
