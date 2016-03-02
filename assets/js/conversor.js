@@ -34,10 +34,10 @@
   function Celsius(valor)
   {
     Temperatura.call(this,valor);
-    toFarenheit: function{
+    toFarenheit: function () {
       return ((this.valor*9)/5)+32);
     }
-    toKelvin: fuction{
+    toKelvin: function () {
       return this.valor+273.15;
     }
   }
@@ -48,6 +48,12 @@
   function Farenheit(valor)
   {
     Temperatura.call(this,valor);
+    toCelsius: function () {
+      return (this.valor-32)/1.800);
+    }
+    toKelvin: function () {
+      return (((this.valor-32)/1.8)+273.15);
+    }
   }
 
   Kelvin.prototype = new Temperatura ();
@@ -57,11 +63,18 @@
   function Kelvin(valor)
   {
     Temperatura.call(this,valor);
+    toFarenheit: function () {
+      return this.valor-273.15;
+    }
+    toCelsius: function () {
+      return ((this.valor-273.15)*1.8)+32;
+    }
   }
 
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
   exports.Farenheit = Farenheit;
+  exports.Kelvin = Kelvin;
 
   exports.convertir = function() {
     var valor     = document.getElementById('convert').value,
