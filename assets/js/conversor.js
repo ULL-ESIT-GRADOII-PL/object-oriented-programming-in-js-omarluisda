@@ -26,27 +26,27 @@
     Temperatura.call(this,valor);
   }
 
-  Celsius.prototype.toFarenheit:function () {
-    return ((this.valor*9)/5)+32);
+  Celsius.prototype.toFarenheit = function () {
+    return (((this.valor*9)/5)+32);
   }
 
-  Celsius.prototype.toKelvin:function () {
+  Celsius.prototype.toKelvin = function () {
     return this.valor+273.15;
   }
 
-  Farenheint.prototype = new Temperatura ();
-  Farenheint.prototype.constructor = Farenheint;
+  Farenheit.prototype = new Temperatura ();
+  Farenheit.prototype.constructor = Farenheit;
 
   function Farenheit(valor)
   {
     Temperatura.call(this,valor);
   }
 
-  Farenheit.prototype.toCelsius:function () {
-    return (this.valor-32)/1.800);
+  Farenheit.prototype.toCelsius = function () {
+    return ((this.valor-32)/1.800);
   }
 
-  Farenheit.prototype.toKelvin:function () {
+  Farenheit.prototype.toKelvin = function () {
     return (((this.valor-32)/1.8)+273.15);
   }
 
@@ -59,11 +59,11 @@
     Temperatura.call(this,valor);
   }
 
-  Kelvin.prototype.toFarenheit: function () {
+  Kelvin.prototype.toFarenheit = function () {
     return this.valor-273.15;
   }
 
-  Kelvin.prototype.toCelsius: function () {
+  Kelvin.prototype.toCelsius = function () {
     return ((this.valor-273.15)*1.8)+32;
   }
 
