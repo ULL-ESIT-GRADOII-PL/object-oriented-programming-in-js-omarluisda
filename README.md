@@ -8,13 +8,13 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 **Página de los autores**
 
-* [Web Omar]<http://alu0100819182.github.io>
-* [Web Luisda]<http://luisdavidpm.github.io>
+* Web Omar <http://alu0100819182.github.io>
+* Web Luisda <http://luisdavidpm.github.io>
 
 **Repo de trabajo**
 
-* [Web Repo]<https://github.com/Luisdavidpm/object-oriented-programming-in-js-omarluisda>
+* Web Repo <https://github.com/Luisdavidpm/object-oriented-programming-in-js-omarluisda>
 
 **Campus virtual de la asignatura**
 
-* [Web Repo]<https://campusvirtual.ull.es/1516/course/view.php?id=178>
+* Web Campus <https://campusvirtual.ull.es/1516/course/view.php?id=178>
