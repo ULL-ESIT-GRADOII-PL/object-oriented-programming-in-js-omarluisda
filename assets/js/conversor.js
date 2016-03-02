@@ -76,12 +76,13 @@
     var valor     = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i;
+        regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cfk]+)\s*(to)?\s+([cfk])$/i;
         valor     = valor.match(regexp);
 
     if (valor) {
       var numero = valor[1],
-          tipo   = valor[2].toLowerCase();
+      tipo   = valor[2].toLowerCase();
+      var  to = valor[4].toLowerCase();
 
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Tipo: " + tipo);
@@ -89,18 +90,37 @@
       switch (tipo) {
         case 'c':
           var celsius = new Celsius(numero);
+          if(to=='f')
           elemento.innerHTML = celsius.toFarenheit().toFixed(2) + " Farenheit";
+          if(to=='k')
+            elemento.innerHTML = celsius.toKelvin().toFixed(2) + " Kelvin";
+          if(to=='c')
+            elemento.innerHTML = "Ya esta en Celsius";
           break;
         case 'f':
           var farenheit = new Farenheit(numero);
-          elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
+          if(to=='c')
+            elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
+          if(to=='k')
+            elemento.innerHTML = farenheit.toKelvin().toFixed(2) + "Kelvin";
+          if(to=='f')
+            elemento.innerHTML = "Ya esta en farenheint";
           break;
+        case 'k':
+          var kelvin = new Kelvin(numero);
+            if(to=='c')
+              elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Celsius";
+            if(to=='f')
+              elemento.innerHTML = kelvin.toFarenheit().toFixed(2) + "Farenheit";
+            if(to=='k')
+              elemento.innerHTML = "Ya esta en Kelvin";
+            break;
 
         default:
           /* rellene este código */
       }
     }
     else
-      elemento.innerHTML = "";
+      elemento.innerHTML = "Error pruebe a introduciar algo como: 32F C";
   }
 })(this);
