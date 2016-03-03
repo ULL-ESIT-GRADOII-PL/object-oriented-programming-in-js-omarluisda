@@ -76,13 +76,17 @@
     var valor     = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cfk]+)\s*(to)?\s+([cfk])$/i;
-        valor     = valor.match(regexp);
+        /*regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cfk]+)\s*(to)?\s+([cfk])$/i;*/
+        xregexp =XRegExp ('(?<valor> [ ]*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)[ ]*) #valor \n' +
+                          '(?<tipo> ([cfk]+)[ ]*) #tipo \n' +
+                          '(?<opt> (to)?[ ]+) #opt \n' +
+                          '(?<to>  (([cfk])[ ]*) #to','x');
+        valor     = X.RegExp.exec(valor,xregexp);
 
     if (valor) {
-      var numero = valor[1],
-      tipo   = valor[2].toLowerCase();
-      var  to = valor[4].toLowerCase();
+      var numero = valor.valor,
+      tipo   = valor.tipo.toLowerCase();
+      var  to = valor.to.toLowerCase();
 
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Tipo: " + tipo);
