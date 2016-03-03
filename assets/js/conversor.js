@@ -91,7 +91,7 @@
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Tipo: " + tipo + ", Otro: " + to);
 
-      switch (tipo) {
+      switch (tipo.charAt(0)) {
         case 'c':
           var celsius = new Celsius(numero);
           if(to =='f')
